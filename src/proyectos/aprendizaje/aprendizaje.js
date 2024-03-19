@@ -2200,12 +2200,12 @@ router.post('/generaFotoStatus', async (req, res) => {
 
     fs.writeFileSync("./reporteStatus/reporteStatus.png", imageBuffer);
 
-    res.status(200).json({ message: 'Reporte generado exitosamente.' });
+    res.status(200).json({ message: 'Reporte generado exitosamente!!!.' });
    
-   
+   /*
     setTimeout(() => {
       envioCorreo();
-    }, "20000"); 
+    }, "20000"); */
 
   } catch (error) {
     console.error('Error al generar el reporte:', error);
