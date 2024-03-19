@@ -6,7 +6,7 @@ const generarImagesStatus = async({url})=>{
       executablePath: '/usr/bin/chromium-browser',
       headless:'new',
       defaultViewport:{
-          width:1366,
+          width:1466,
           height:6800,
           deviceScaleFactor:1,
           isMobile:true,
