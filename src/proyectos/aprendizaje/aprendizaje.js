@@ -1724,7 +1724,7 @@ const insertarArchIncidenteDet=(insertId, valArch)=>{
           
         
               sql = `
-              SELECT
+              SELECT DISTINCT
               gobm.inc_registro.id AS idCab,
               gobm.inc_registro.inc_incidente,
               gobm.inc_registro.inc_lugar,
@@ -1739,9 +1739,6 @@ const insertarArchIncidenteDet=(insertId, valArch)=>{
               ( SELECT COUNT(*) FROM inc_registro_detalle WHERE fk_ctto = inc_cst_contratos.fk_cst_ctto AND fk_id_incidente = idCab AND inc_complementada = 3 ) AS count_complementada_3,
               ( SELECT COUNT(*) FROM inc_registro_detalle WHERE fk_ctto = inc_cst_contratos.fk_cst_ctto AND fk_id_incidente = idCab AND inc_complementada = 2 ) AS count_complementada_2,
               ( SELECT COUNT(*) FROM inc_registro_detalle WHERE fk_ctto = inc_cst_contratos.fk_cst_ctto AND fk_id_incidente = idCab AND inc_complementada = 2 AND inc_det_estado = 3 ) AS count_cerradas,
-
-
-
               tofitobd.DotacionCC.Nombre,
               CONCAT(gobm.inc_registro.id, '_', gobm.inc_cst_contratos.fk_cst_rut,'_',gobm.inc_cst_contratos.fk_cst_ctto) AS idGrid
             FROM
@@ -1755,7 +1752,7 @@ const insertarArchIncidenteDet=(insertId, valArch)=>{
            ${bEmpresa}
            ${bCtto}
            ${bTexto}
-
+           
             ORDER BY
             idCab ASC,
               fk_cst_rut ASC
