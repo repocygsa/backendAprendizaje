@@ -18,7 +18,7 @@ const generarImagesStatus = async({url})=>{
     await page.goto(url,{
        waitUntil: 'domcontentloaded'  // permite esperar a que la página se encuentra cargada
     })
-    await  page.waitForNetworkIdle({ idleTime: 3000 })
+    await  page.waitForNetworkIdle({ idleTime: 10000 })
 
     await page.evaluate(() => document.body.style.background = 'transparent');
    
